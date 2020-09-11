@@ -41,10 +41,13 @@ class Toggle extends React.Component {
     super(props);
     this.state = { isToggleOn: true };
 
-    this.handleClick = this.handleClick.bind(this);
+    // Need to bind to onClick in the constructor
+    // this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
+  // Arrow function is experiemntal public class method
+  handleClick = () => {
+  // handleClick() {
     this.setState(
       state => ({
         isToggleOn: !state.isToggleOn
