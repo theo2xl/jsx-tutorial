@@ -10,13 +10,13 @@ class Clock extends React.Component {
     };
   }
 
-  UNSAFE_componentDidMount() {
+  componentDidMount() {
     this.timerID = setInterval(
       () => this.tick(), 1000
     );
   }
 
-  UNSAFE_componentWillMount() {
+  componentWillMount() {
     clearInterval(this.timerID);
   }
 
@@ -29,8 +29,8 @@ class Clock extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello, world!</h1>
-        <h2>Encapsulated Clock: {this.state.date.toLocaleTimeString()}.</h2>
+        <h1>Encapsulated Clock</h1>
+        <h2>{this.state.date.toLocaleTimeString()}.</h2>
       </div>
     );
   }
